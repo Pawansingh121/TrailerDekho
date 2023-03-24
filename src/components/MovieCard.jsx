@@ -23,7 +23,7 @@ const MovieCard = ({ item, handleClick, movies }) => {
           {item.title}
         </p>
 
-        <div className="h-full w-full absolute top-0 left-0 hover:bg-black/80 opacity-0 hover:opacity-100 text-white flex items-center justify-center ">
+        <div className="h-full w-full absolute top-0 left-0  text-white flex items-center justify-center ">
           <BsPlayCircle
             onClick={() => handleClick(item)}
             className="cursor-pointer"
@@ -38,7 +38,7 @@ const MovieCard = ({ item, handleClick, movies }) => {
                 });
               }}
               size={24}
-              className="text-red-600 absolute top-2 right-4"
+              className="text-red-600 cursor-pointer absolute top-2 right-4"
             />
           ) : (
             <AiOutlineHeart
@@ -49,7 +49,7 @@ const MovieCard = ({ item, handleClick, movies }) => {
                 });
               }}
               size={24}
-              className="text-white absolute top-2 right-4"
+              className="text-white absolute cursor-pointer top-2 right-4"
             />
           )}
         </div>
