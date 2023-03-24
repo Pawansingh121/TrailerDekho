@@ -20,12 +20,12 @@ const Navbar = () => {
 
   return (
     <div
-      className={` h-[90px] w-full  flex items-center justify-between pl-1 md:pl-6 lg:pl-8 pr-2 md:pr-8 lg:pr-10  transition ease-in duration-300 fixed text-white z-50  ${
+      className={` h-[90px] w-screen flex-1  flex items-center justify-between pl-1 md:pl-6 lg:pl-8 pr-2 md:pr-8 lg:pr-10  transition ease-in duration-300 fixed text-white z-50  ${
         show && "bg-[#111] fixed z-40 "
       } `}
     >
       <Link to="/">
-        <div className="flex items-center gap-1 md:gap-2 cursor-pointer">
+        <div className="flex items-center  gap-1 md:gap-2 cursor-pointer">
           <img
             className=" w-[40px] h-[40px] md:w-[70px] md:h-[70px]  "
             src={logo}

@@ -9,8 +9,8 @@ const SearchBar = () => {
   } = searchState();
   return (
     <>
-      <div className="flex justify-center items-center flex-shrink relative px-4 md:px-0">
-        <div className="bg-white flex items-center justify-between rounded-2xl  w-[700px] h-[30px] absolute bottom-[50px]  text-black ">
+      <div className=" w-full flex justify-center items-center flex-shrink relative px-4 md:px-0">
+        <div className="bg-white  flex-1 flex items-center justify-between rounded-2xl  w-[300px]  md:w-[600px] lg:w-[700]  h-[30px] absolute bottom-[50px]  text-black ">
           <input
             className="ml-2 w-[550px] outline-none"
             type="text"
