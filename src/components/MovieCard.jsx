@@ -13,21 +13,18 @@ const MovieCard = ({ item, handleClick, movies }) => {
 
   return (
     <>
-      <div className="hover:scale-105 transition-all relative ">
+      <div className="relative hover:scale-105  transition-all ">
         <img
-          className=" rounded-xl"
+          onClick={() => handleClick(item)}
+          className=" rounded-xl cursor-pointer"
           src={`https://image.tmdb.org/t/p/w500/${item?.backdrop_path}`}
           alt=""
         />
-        <p className="text-white text-center text-sm md:text-xl">
+        <p className="text-white text-center text-sm md:text-xl ">
           {item.title}
         </p>
 
-        <div className="h-full w-full absolute top-0 left-0   text-white flex items-center justify-center ">
-          <BsPlayCircle
-            onClick={() => handleClick(item)}
-            className="cursor-pointer"
-          />
+        <div className="h-full w-full  text-white flex items-center justify-center ">
           {watchlist.some((p) => p.id === item.id) ? (
             <AiFillHeart
               onClick={() => {
@@ -36,7 +33,8 @@ const MovieCard = ({ item, handleClick, movies }) => {
                   payload: item,
                 });
               }}
-              className="text-red-600 absolute top-2 right-4"
+              size={24}
+              className="text-red-600 absolute top-1 right-3 text-xl md:text-2xl"
             />
           ) : (
             <AiOutlineHeart
@@ -46,7 +44,7 @@ const MovieCard = ({ item, handleClick, movies }) => {
                   payload: item,
                 });
               }}
-              className="text-white absolute top-2 right-4"
+              className="text-white absolute top-1 right-2 text-xl md:text-2xl"
             />
           )}
         </div>

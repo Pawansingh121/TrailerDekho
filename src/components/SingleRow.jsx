@@ -54,12 +54,7 @@ const SingleRow = ({ title, fetchURL }) => {
           <div className="w-[100vw] h-[100vh] top-0 left-0 right-0 bottom-0 fixed z-50  ">
             <div className="w-[100vw] h-[100vh]  top-0 left-0 right-0 bottom-0 fixed  bg-gray-200 bg-opacity-50">
               <div className="flex flex-col gap-2 justify-center items-center   w-full h-screen   rounded-xl">
-                <YouTube
-                  className={"  "}
-                  containerClassName={" "}
-                  videoId={trailer}
-                  opts={opts}
-                />
+                <YouTube videoId={trailer} opts={opts} />
                 <button
                   onClick={() => {
                     setTrailer(!trailer);
