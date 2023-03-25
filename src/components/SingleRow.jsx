@@ -38,7 +38,7 @@ const SingleRow = ({ title, fetchURL }) => {
   return (
     <>
       <h2 className=" text-yellow-400 font-bold md:text-2xl    p-4">{title}</h2>
-      <div className="relative grid grid-cols-3 md:grid-cols-5  mx-2 gap-2 md:gap-4">
+      <div className=" grid grid-cols-3 md:grid-cols-5  mx-2 gap-2 md:gap-4">
         {movies
           .filter((item) => {
             if (input === "") {
