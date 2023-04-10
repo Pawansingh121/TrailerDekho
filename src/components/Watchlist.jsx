@@ -4,6 +4,7 @@ import { CgSmileSad } from "react-icons/cg";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 
 import { Link } from "react-router-dom";
+import MovieCard from "./MovieCard";
 
 const Watchlist = () => {
   const {
@@ -13,32 +14,13 @@ const Watchlist = () => {
   return (
     <>
       {watchlist.length > 0 ? (
-        <div className="w-full min-h-screen max-h-full pt-[200px]">
+        <div className="w-full min-h-screen max-h-full pt-[100px]">
           <h2 className="text-white text-3xl font-semibold pl-[40px] ">
             Your Watchlist...
           </h2>
           <div className="text-white mt-10 grid grid-cols-3 md:grid-cols-4  gap-4 mx-4">
             {watchlist.map((item, id) => {
-              return (
-                <div key={id} className="flex flex-col relative  items-center">
-                  <img
-                    className=" h-[200px] w-[200px]  md:h-[300px] md:w-[300px] rounded-xl object-cover"
-                    src={`https://image.tmdb.org/t/p/w500/${item?.backdrop_path}`}
-                    alt=""
-                  />
-                  <p className="">{item.title}</p>
-                  <AiOutlineCloseCircle
-                    onClick={() =>
-                      dispatch({
-                        type: "removeWatchlist",
-                        payload: item,
-                      })
-                    }
-                    className="text-white absolute top-2 right-10 cursor-pointer"
-                    size={32}
-                  />
-                </div>
-              );
+              return <MovieCard key={id} item={item} />;
             })}
           </div>
         </div>

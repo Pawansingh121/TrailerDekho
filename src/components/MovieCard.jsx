@@ -1,11 +1,24 @@
 import React from "react";
+import { useState } from "react";
+import axios from "axios";
 
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiFillHeart } from "react-icons/ai";
-import { BsPlayCircle } from "react-icons/bs";
-import { searchState } from "../context/Context";
 
-const MovieCard = ({ item, handleClick, movies }) => {
+import { searchState } from "../context/Context";
+import Player from "./Player";
+
+const MovieCard = ({ item }) => {
+  const [trailer, setTrailer] = useState("");
+  const handleClick = async (item) => {
+    await axios
+      .get(
+        `https://api.themoviedb.org/3/movie/${item.id}?api_key=32b8e2b266a7ab1e2bc2e1afc3288b77&append_to_response=videos`
+      )
+      .then((res) => {
+        setTrailer(res.data.videos.results[0].key);
+      });
+  };
   const {
     state: { watchlist },
     dispatch,
@@ -49,6 +62,7 @@ const MovieCard = ({ item, handleClick, movies }) => {
           )}
         </div>
       </div>
+      {trailer && <Player trailer={trailer} setTrailer={setTrailer} />}
     </>
   );
 };
